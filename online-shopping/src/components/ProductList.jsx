@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react'
 import {useSelector, useDispatch} from "react-redux";
 import {getAllProducts} from "../redux/productSlice";
-
+import Product        from './Product'; 
 const ProductList = () => {
 	const dispatch = useDispatch();
 	const {products} = useSelector((store) => store.product)
@@ -12,7 +12,11 @@ const ProductList = () => {
 	
   return (
     <div>
-		Product Reducer
+		{
+			products.map((product) => (
+				<Product key={product.id} product={product} />
+				))
+		}
     </div>
   )
 }
