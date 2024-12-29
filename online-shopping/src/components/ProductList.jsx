@@ -1,13 +1,13 @@
 import { React, useEffect } from 'react'
 import {useSelector, useDispatch} from "react-redux";
-import {gelAllProducts} from "../redux/productSlice";
+import {getAllProducts} from "../redux/productSlice";
 
 const ProductList = () => {
 	const dispatch = useDispatch();
 	const {products} = useSelector((store) => store.product)
 	
 	useEffect(() => {
-	  dispatch(getAllProducts)
+	  dispatch(getAllProducts())
 	}, [ ])
 	
   return (

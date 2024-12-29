@@ -25,12 +25,12 @@ const Header = () => {
 		<p className="nevzat">Nevzat Atalay</p>
 		 </div>
 		<div className="flex-row">
-			<input type="text" placeHolder="search" />
+			<input type="text" placeholder="search" />
 			{
-				isDark ? <FaRegMoon className="icon" className="icon" onClick={changeTheme} />:
+				isDark ? <FaRegMoon className="icon" onClick={changeTheme} />:
 			<FaSun className="icon" onClick={changeTheme} />
 			}
-			<FaShoppingCart   />
+			<FaShoppingCart className="icon"  />
 		</div>
    </div>
   )
