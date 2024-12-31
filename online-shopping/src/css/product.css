@@ -1,0 +1,29 @@
+.product-image{
+	width:200px;
+	height:300px;
+	border-radius: 10px;
+}
+ .card{
+	width: 200px;
+	height: auto;
+	margin: 20px 0;
+	padding: 20px 10px;
+	border-radius: 10px;
+	border:none;
+	box-shadow:10px 7px 3px lightgray;
+ }
+.card p{
+	text-align: center;
+	margin: 10px 0;
+}
+.card h4 {
+	text-align: center;
+	height: 80px;
+	margin: 20px 0;
+}
+button{
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #000;
+	color:#fff;
+}
