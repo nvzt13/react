@@ -10,7 +10,7 @@ const Product = ({product}) => {
     <div className="card flex-column">
         <img className="product-image" src={image} alt="" />
         <h4> {title}</h4>
-        <p> Price:{price}</p>
+        <p> Price: {price} ₺</p>
         <button onClick={ ()=>navigate('/product-details/' + id)}>Detaya Git</button>
     </div>
   )
