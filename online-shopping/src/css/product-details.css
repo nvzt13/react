@@ -1,0 +1,25 @@
+.container{
+	display: flex;
+	justify-content:center;
+	margin: 150px 0;
+}
+.img-wrapper{
+	margin:0 50px;
+}
+img{
+	width:300px ;
+	height: 600px;
+}
+ .product-body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content:space-between;
+ }
+ .icons{
+	display: flex;
+	align-items: center;
+ }
+ .icon{
+	font-size: 40px;
+ }

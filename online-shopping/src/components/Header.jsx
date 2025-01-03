@@ -4,6 +4,9 @@ import '../css/header.css'
 import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import Badge from '@mui/material/Badge';
+
+
 const Header = () => {
 	const [isDark, setIsdark] = useState(false);
 	const changeTheme = () => {
@@ -30,7 +33,9 @@ const Header = () => {
 				isDark ? <FaRegMoon className="icon" onClick={changeTheme} />:
 			<FaSun className="icon" onClick={changeTheme} />
 			}
+			<Badge badgeContent={4} color="primary">
 			<FaShoppingCart className="icon"  />
+			</Badge>
 		</div>
    </div>
   )
