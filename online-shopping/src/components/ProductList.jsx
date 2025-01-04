@@ -1,26 +1,23 @@
-import { React, useEffect } from 'react'
+import { React, useEffect} from 'react'
 import {useSelector, useDispatch} from "react-redux";
-import {getAllProducts} from "../redux/productSlice";
 import Product        from './Product'; 
 import '../css/productlist.css'
-
-
-
+import {getAllProducts} from '../redux/productSlice'
 
 
 
 const ProductList = () => {
 	const dispatch = useDispatch();
-	const {products} = useSelector((store) => store.product)
+	const {products} = useSelector((state) => state.product)
+	useEffect(() =>{
+		dispatch(getAllProducts());
+	},[])
 
-	useEffect(() => {
-	  dispatch(getAllProducts())
-	}, [ ])
-	
+	console.log("Bu component çalıste ")
   return (
     <div className="product-list">
 		{
-			products.map((product) => (
+			products && products.map((product) => (
 				<Product key={product.id} product={product} />
 				))
 		}

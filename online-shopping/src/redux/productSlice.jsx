@@ -1,6 +1,16 @@
+// ProductList componentinde çağrılmak için api çağrısı fonksiyonu hazırlanmıştır.
+// Seçilen ürünün bigilerini almak için setSelectedProduct fonksiyonu hazırlanmıştır.
+
+
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
+
+const initialState = {
+   products:[],
+   selectedProduct: {},
+   loading: false,
+}
 
 const BASE_URL = "https://fakestoreapi.com";
 
@@ -9,14 +19,10 @@ export const getAllProducts = createAsyncThunk("getAllProducts", async () => {
 	return response.data;
 })
 
+
 const productSlice = createSlice({
 	name: "product",
-	 initialState:{
-		products: [],
-		selectedProduct: {},
-		loading: false,
-		items:[]
-	},
+	initialState,
 	reducers:{  
 		setSelectedProduct: (state, action) => {
 			state.selectedProduct = action.payload
@@ -27,8 +33,9 @@ const productSlice = createSlice({
 			state.loading = true;
 		})
 		builder.addCase(getAllProducts.fulfilled, (state, action) => {
+			state.products = action.payload
 			state.loading = false;
-			state.products = action.payload;
+			
 		})
 	}
 })

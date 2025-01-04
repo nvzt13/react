@@ -8,15 +8,21 @@ import { FaPlusCircle, FaMinusCircle} from "react-icons/fa";
 
 
 const ProductDetails = () => {
+
 	// Tiklanilan urunun id'sini al
   const {id} = useParams()
+
   // api'dan cekilen urunleri ve o anki secilen urunu stordan al
+
   const { products, selectedProduct } = useSelector((store) => store.product);
   const { items } = useSelector((store) => store.basket.items);
+
   // secilen urune object destructin yap
   const { title, description, image, price } = selectedProduct;
+
   // sepete eklenen urun sayisi icin state
   const [count, setCount] = useState(1);
+
   const dispatch = useDispatch();
   const increment = () => {
 	setCount( count + 1 )
@@ -39,8 +45,16 @@ const ProductDetails = () => {
   
   // sepete eklele
   const addBasket = () => {
-	dispatch(addToBasket())
+      const payload = {
+        id,
+        price,
+        title,
+        image,
+        count
+      }
+	dispatch(addToBasket(payload))
   }
+  console.log("Product Details Componenti çalıştı!!")
   return (
     <div className="container">
 			<div className="img-wrapper">
@@ -56,8 +70,6 @@ const ProductDetails = () => {
 					<FaMinusCircle onClick={decrement} className="icon"/>
 		      </div>
 					<button onClick={addBasket}>Sepete Ekle</button>
-					<p>{items}</p>
-					<button onClick={addBasket}>Test</button>
 			</div>
      </div>
   )

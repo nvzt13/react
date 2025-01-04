@@ -5,9 +5,15 @@ import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import Badge from '@mui/material/Badge';
+import {useSelector, useDispatch} from 'react-redux'
+import {togleFunction} from '../redux/basketSlice'
+
 
 
 const Header = () => {
+	const items = useSelector((store) => store.basket.items)
+	const dispatch = useDispatch();
+
 	const [isDark, setIsdark] = useState(false);
 	const changeTheme = () => {
 		const root = document.getElementById("root");
@@ -33,8 +39,8 @@ const Header = () => {
 				isDark ? <FaRegMoon className="icon" onClick={changeTheme} />:
 			<FaSun className="icon" onClick={changeTheme} />
 			}
-			<Badge badgeContent={4} color="primary">
-			<FaShoppingCart className="icon"  />
+			<Badge className='basket-icon' badgeContent={items.length} color="primary">
+			<FaShoppingCart className="icon"   onClick={ () => dispatch(togleFunction()) } />
 			</Badge>
 		</div>
    </div>

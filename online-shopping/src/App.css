@@ -17,3 +17,15 @@
 	justify-content: center;
 	align-items: center;
 }
+.basket{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	margin:15px 0;
+	width: 600px;
+	height: auto;
+}
+.title{
+	max-width: 250px;
+}
