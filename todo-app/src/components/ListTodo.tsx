@@ -1,17 +1,18 @@
-import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
-
+import React from 'react'
+import { useSelector } from 'react-redux';
+import Todo from "./Todo";
+import {useEffect} from 'react';
 
 const ListTodo = () => {
+	const { todos } = useSelector((store) => store.todo)
+	
   return (
-    <div className="list-todo">
-        <div>
-            Bu eklenecek olan bir tododur.
-        </div>
-        <div className="icons">
-            <MdDelete className="icon" />
-            <FaEdit className="icon" />
-        </div>
+    <div>
+        {
+			todos.map((todo) => (
+				<Todo key={todo.id} todo={todo} />
+			))
+        }
     </div>
   )
 }
