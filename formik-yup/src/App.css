@@ -31,6 +31,10 @@ input{
   border-radius: 5px;
   border: none;
 }
+p{
+	color: red;
+	font-size: 12px;
+}
 label{
   font-size: 18px;
 }
@@ -56,4 +60,19 @@ button{
   font-size: large;
   font-weight: 700;
   font-family: sans-serif;
+}
+@media only screen and (max-width: 600px){
+	form{
+		width: 300px;
+		height: 60vh;
+	}
+	input{
+		padding:9px 5px ;
+	}
+	button{
+		padding:8px 4px ;
+	}
+	label{
+  font-size: 14px;
+}
 }
